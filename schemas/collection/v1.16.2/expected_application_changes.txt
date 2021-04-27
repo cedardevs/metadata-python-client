@@ -1,0 +1,16 @@
+As a consequence of the changes in 1.16.2, applications will need to make the following changes:
+  
+MDQ:
+- No known changes for KMS
+- The UMM-C UseConstraints/LicenseUrl changed to LicenseURL and UseConstraints/Description/Description changed to UseConstraints/Description. This may impact the LicenseText or LicenseURL scripts.
+CMR:
+- CMR supports the changed fields at ingest
+- CMR supports the changed fields at export
+MMT:
+- MMT will need to be changed to allow for the changed UseConstraints LicenseURL and Description element.
+EDSC:
+Preview Gem: May need to change to display the new LicenseURL and Description values.
+
+Stakeholders:
+- Metadata Curators are notified of changes and provide input back to ESDIS regarding when they will update their collections.
+
