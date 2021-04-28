@@ -38,6 +38,11 @@ class UmmValidation(unittest.TestCase):
             payload = json.load(file)
         validate(instance=payload, schema=self.granule_schema)
 
+    def test_granule_oisst_example(self):
+        with open("../schemas/granule/v1.6.2/GranuleOISSTExample_MVM.json") as file:
+            payload = json.load(file)
+        validate(instance=payload, schema=self.granule_schema)
+
     def test_granule_example1(self):
         with open("../schemas/granule/v1.6.2/GranuleExample1.json") as file:
             payload = json.load(file)

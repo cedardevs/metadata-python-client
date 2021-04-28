@@ -1,0 +1,69 @@
+{
+  "GranuleUR": "OISST_Unique_Granule_v1.6.2",
+  "ProviderDates": [{
+    "Date": "2021-04-28T00:00:00Z",
+    "Type": "Create"
+  }],
+  "CollectionReference": {
+      "ShortName": "Sea Surface Temperature - Optimum Interpolation",
+      "Version": "2"
+  },
+  "AccessConstraints": {
+    "Description" : "Public Access",
+    "Value": 42
+  },
+  "DataGranule": {
+    "ArchiveAndDistributionInformation": [{
+      "Name": "GranuleFile",
+      "SizeInBytes": 23000,
+      "Size": 23,
+      "SizeUnit": "KB",
+      "Format": "NETCDF-4",
+      "MimeType": "application/x-netcdf",
+      "Checksum": {
+        "Value": "E51569BF48DD0FD0640C6503A46D4753",
+        "Algorithm": "MD5"
+      }
+    }],
+    "DayNightFlag" : "Unspecified",
+    "ProductionDateTime" : "2018-07-19T12:01:01Z",
+    "Identifiers": [{
+      "Identifier": "SMAP_L3_SM_P_20150407_R13080_001.h5",
+      "IdentifierType": "ProducerGranuleId"
+    }]
+  },
+  "TemporalExtent": {
+    "SingleDateTime": "2018-07-17T00:00:00.000Z"
+  },
+  "SpatialExtent": {
+    "GranuleLocalities": ["GranuleLocality1", "GranuleLocality2"],
+    "HorizontalSpatialDomain": {
+      "ZoneIdentifier": "1",
+      "Orbit": {
+        "AscendingCrossing":88.92,
+        "StartLatitude":-76.555340,
+        "StartDirection": "D",
+        "EndLatitude":-78.209954,
+        "EndDirection": "D"
+      }
+    }
+  },
+  "Platforms": [{
+    "ShortName": "Satellite",
+    "Instruments": [{
+      "ShortName": "AVHRR"
+    }]
+  }],
+  "RelatedUrls": [{
+    "URL": "https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.nodc:GHRSST-AVHRR_OI-NCEI-L4-GLOB",
+    "Type": "VIEW RELATED INFORMATION",
+    "Description": "This link provides information about the data set.",
+    "Format": "HTML",
+    "MimeType": "text/html"
+  }],
+  "MetadataSpecification": {
+    "URL": "https://cdn.earthdata.nasa.gov/umm/granule/v1.6.2",
+    "Name": "UMM-G",
+    "Version": "1.6.2"
+  }
+}
