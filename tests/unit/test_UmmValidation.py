@@ -12,6 +12,17 @@ class UmmValidation(unittest.TestCase):
         with open("../schemas/collection/v1.16.2/umm-cmn-json-schema.json") as file:
             self.collection_schema = json.load(file)
 
+    def test2_granule_payload(self):
+        payload = \
+            {"CollectionReference": {"ShortName": "CollectionShortName", "Version": "1.6.2"},
+             "MetadataSpecification": {"URL": "https://cdn.earthdata.nasa.gov/umm/granule/v1.6.2", "Name": "UMM-G",
+                                       "Version": "1.6.2"},
+             "GranuleUR": "OISST_Unique_Granule_v1.6.2",
+             "ProviderDates": [{"Date": "2021-04-28T00:00:00Z", "Type": "Create"}]
+             }
+                # If no exception is raised by validate(), the instance is valid.
+        validate(instance=payload, schema=self.granule_schema)
+
     def test_granule_payload(self):
         payload = \
             {
@@ -22,7 +33,7 @@ class UmmValidation(unittest.TestCase):
                 ],
                 "CollectionReference": {
                     "ShortName": "CollectionShortName",
-                    "Version": "1.6"
+                    "Version": "1.6.2"
                 },
                 "MetadataSpecification": {
                     "URL": "https://cdn.earthdata.nasa.gov/umm/granule/v1.6.2",
@@ -30,6 +41,7 @@ class UmmValidation(unittest.TestCase):
                     "Version": "1.6.2"
                 }
             }
+
         # If no exception is raised by validate(), the instance is valid.
         validate(instance=payload, schema=self.granule_schema)
 

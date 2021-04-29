@@ -6,6 +6,7 @@ from cmr.info.Granule import Granule
 
 class GranuleTest(unittest.TestCase):
     schema = None
+    payload = None
 
     def setUp(self):
         with open("../schemas/granule/v1.6.2/umm-g-json-schema.json") as file:
@@ -16,15 +17,14 @@ class GranuleTest(unittest.TestCase):
     def test_dynamic_granule_payload(self):
         granule = Granule()
         granule.payload["GranuleUR"] = "OISST_Unique_Granule_v1.6.2"
-        granule.payload["ProviderDates"] = [{"Date": "2021-04-28T00:00:00Z"}, {"Type": "Create"}]
-        payload = granule.serialize()
-        print("\n" + payload)
+        granule.payload["ProviderDates"] = [{"Date": "2021-04-28T00:00:00Z", "Type": "Create"}]
         # If no exception is raised by validate(), the instance is valid.
-        validate(instance=payload, schema=self.granule_schema)
+        raised = False
+        try:
+            validate(instance=granule.payload, schema=self.granule_schema)
+        except:
+            raised = True
 
-    assert eventHandler.process( event, None ) == \
-           {'body': '{"message": "Go Archive Team! Your function executed successfully!", '
-                    '"payload": "ObjectCreated:Put", '
-                    '"s3_key": "noaa/nesdis/ncei/csb/csv/file1.csv"}'
+        self.assertFalse(raised)
 
-               , 'statusCode': 200 }
+

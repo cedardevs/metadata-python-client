@@ -19,18 +19,13 @@ def process(event, context):
         s3_key = rec.get("s3").get("object").get("key")
         print(s3_key)
 
-        # "GranuleUR": "OISST_Unique_Granule_v1.6.2",
-        # "ProviderDates": [{
-        #     "Date": "2021-04-28T00:00:00Z",
-        #     "Type": "Create"
-        # }]
-
-        granule = Granule()
-        granule.payload["GranuleUR"] = "OISST_Unique_Granule_v1.6.2"
-        granule.payload["ProviderDates"] = {"Date": "2021-04-28T00:00:00Z", "Type": "Create"}
 
 
-    body = granule.serialize()
+    body = {
+        "message": "Go Archive Team! Your function executed successfully!",
+        "evt_name": evt_name,
+        "s3_key": s3_key
+    }
 
     response = {
         "statusCode": 200,
