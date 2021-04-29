@@ -1,4 +1,4 @@
-from transform import eventHandler
+from cmr.transform import eventHandler
 
 
 def test_handler_process():
@@ -29,7 +29,7 @@ def test_handler_process():
 
     event = {"Records": [{"body": body}]}
 
-    assert eventHandler.process(event, None) == \
+    assert eventHandler.process( event, None ) == \
            {'body': '{"message": "Go Archive Team! Your function executed successfully!", '
                     '"evt_name": "ObjectCreated:Put", '
                     '"s3_key": "noaa/nesdis/ncei/csb/csv/file1.csv"}'

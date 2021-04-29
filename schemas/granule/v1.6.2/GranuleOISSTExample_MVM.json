@@ -10,7 +10,7 @@
   },
   "AccessConstraints": {
     "Description" : "Public Access",
-    "Value": 42
+    "Value": 10
   },
   "DataGranule": {
     "ArchiveAndDistributionInformation": [{
@@ -39,12 +39,13 @@
     "GranuleLocalities": ["GranuleLocality1", "GranuleLocality2"],
     "HorizontalSpatialDomain": {
       "ZoneIdentifier": "1",
-      "Orbit": {
-        "AscendingCrossing":88.92,
-        "StartLatitude":-76.555340,
-        "StartDirection": "D",
-        "EndLatitude":-78.209954,
-        "EndDirection": "D"
+      "Geometry": {
+        "BoundingRectangles": [{
+          "WestBoundingCoordinate": -180,
+          "NorthBoundingCoordinate": 85.04450225830078,
+          "EastBoundingCoordinate": 180,
+          "SouthBoundingCoordinate": -85.04450225830078
+        }]
       }
     }
   },
@@ -55,6 +56,14 @@
     }]
   }],
   "RelatedUrls": [{
+    "URL": "https://access-dev-oisst.s3.amazonaws.com/nc/oisst-avhrr-v02r01.19820201.nc",
+    "Type": "GET DATA",
+    "Description": "This link provides direct download access to the granule.",
+    "Format": "NETCDF-4",
+    "MimeType": "application/x-netcdf",
+    "Size": 395.673,
+    "SizeUnit": "KB"
+  }, {
     "URL": "https://data.nodc.noaa.gov/cgi-bin/iso?id=gov.noaa.nodc:GHRSST-AVHRR_OI-NCEI-L4-GLOB",
     "Type": "VIEW RELATED INFORMATION",
     "Description": "This link provides information about the data set.",
